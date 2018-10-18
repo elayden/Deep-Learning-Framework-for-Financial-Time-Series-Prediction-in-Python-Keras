@@ -4,7 +4,7 @@
 -Calculates model’s annualized return, improvement from buy/hold, percent profitable trades, profit factor, max drawdown
 
 train_stock_mdl.py
-    this script imports a csv file containing predictors and an outcome 
+    This script imports a csv file containing predictors and an outcome 
     variable (last column). It was designed with stock/ETF prediction in mind, 
     but could potentially be adapted for other data. The default neural network
     architecture is very simple (2 hidden layers with 200 units each and 
