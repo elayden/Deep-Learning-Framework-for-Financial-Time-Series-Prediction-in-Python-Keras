@@ -345,7 +345,7 @@ def main():
     np.sum(devResults[:,6]>0)
     
     # SELECT BEST MODEL BASED ON METRIC OF CHOICE (default:  RMSE)
-    selectionMetric = 0 # RMSE improvement
+    selectionMetric = 6 # RMSE improvement
     
     if selectionMetric==5:
         bestModel = models[devResults[:,selectionMetric].argmin()][0]
