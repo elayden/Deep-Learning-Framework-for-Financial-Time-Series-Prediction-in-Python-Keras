@@ -1,9 +1,13 @@
 # Deep Learning Framework for Financial Time Series Prediction in Python Keras
+
 -Randomly partitions time series segments into train, development, and test sets
+
 -Trains multiple models optimizing parameters for development set, and performs final cross-validation in test sets
+
 -Calculates model’s annualized return, improvement from buy/hold, percent profitable trades, profit factor, max drawdown
 
 train_stock_mdl.py
+
     This script imports a csv file containing predictors and an outcome 
     variable (last column). It was designed with stock/ETF prediction in mind, 
     but could potentially be adapted for other data. The default neural network
@@ -22,10 +26,12 @@ train_stock_mdl.py
     the final model.)
     
 stock_mdl_new_ticker.py
+
     A script that loads a previously optimized neural network and predicts 
     data from a new stock/ETF ticker. After evaluating performance, there is
     the option to train the model further on the new ticker.
     
 stock_mdl_tomorrow.py
+
     Script to load previously trained model, provide stats on full dataset, and 
     predict % gain/loss for tomorrow
