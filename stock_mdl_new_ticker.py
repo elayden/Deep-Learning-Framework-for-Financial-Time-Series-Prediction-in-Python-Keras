@@ -20,7 +20,7 @@ from train_stock_mdl import getSlidingWindowData, calcPerformance, plotPredictio
 
 # Functions:
 
-def loadData(final_fname, csvfile):
+def loadData(fpath, final_fname, csvfile):
     # Load model:
     f = open(final_fname, 'rb')
     (bestModel, scaler, testResults) = pickle.load(f)
@@ -79,7 +79,7 @@ def trainOnNew(bestModel, scaler, fullData, fullDataScaled):
 # Main function:
 def newTicker():
     # Load Data:
-    bestModel, scaler, fullData, fullDataScaled, today = loadData(final_fname, csvfile)
+    bestModel, scaler, fullData, fullDataScaled, today = loadData(fpath, final_fname, csvfile)
     
     # Predict new data with model:
     testResults = predictNew(bestModel, scaler, fullData, fullDataScaled)

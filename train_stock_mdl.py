@@ -170,7 +170,7 @@ def calcPerformance(yReal, yHat):
     buys = yReal[yHat>0]
     nTrades = np.sum(yHat>0)
     logReturns = np.log(1 + buys)
-    annualizedReturn = ((np.sum(logReturns) + 1)**(252/logReturns.shape[0]) - 1)*100
+    annualizedReturn = ((np.sum(logReturns) + 1)**(252/yReal.shape[0]) - 1)*100
     nullAnnualizedReturn = ((np.sum(np.log(1+yReal)) + 1)**(252/yReal.shape[0]) - 1)*100
     returnImprovement = (annualizedReturn-nullAnnualizedReturn)/nullAnnualizedReturn * 100
     
@@ -188,11 +188,11 @@ def calcPerformance(yReal, yHat):
     # %Profitable:
     n_loss = np.sum(np.logical_and(yReal<0, (yHat>buyThreshold))) 
     n_win = np.sum(np.logical_and(yReal>0, (yHat>buyThreshold)))
-    percentProfitable = n_win/(n_win+n_loss) *100
+    percentProfitable = n_win/(n_win+n_loss) * 100
     
     # Profit factor:
-    win1 = np.sum(np.log(1 + yReal[np.logical_and(yReal>0, (yHat>buyThreshold))])) * 100    
-    loss1 = np.abs(np.sum(np.log(1 + yReal[np.logical_and(yReal<0, (yHat>buyThreshold))])) * 100)
+    win1 = np.sum(yReal[np.logical_and(yReal>0, (yHat>buyThreshold))]) 
+    loss1 = np.sum(np.abs(yReal[np.logical_and(yReal<0, (yHat>buyThreshold))])) 
     profitFactor = win1/loss1
     
     return [annualizedReturn, returnImprovement, nTrades, percentProfitable, profitFactor, maxDrawdown, rmseImprove]
@@ -395,9 +395,9 @@ trainPercent = .9 # % of data to use for training set
 devPercent = .05 # % of data to use for dev set
 
 # Model Type Parameters:
-trainingEpochs = 800 # number of training epochs per model
-nModels = 5 # number of models to create and optimize for Dev set
-useBestCheckpoint = True # whether to reload last-saved best model for dev prediction
+trainingEpochs = 700 # number of training epochs per model
+nModels = 10 # number of models to create and optimize for Dev set
+useBestCheckpoint = False # whether to reload last-saved best model for dev prediction
 
 lookBack = 1 # lookback period / window size (default: 1, i.e., previous day)
 returnPeriod = 1 # number of days to calculate forward return over (default: 1)

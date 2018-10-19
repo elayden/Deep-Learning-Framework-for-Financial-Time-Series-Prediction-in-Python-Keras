@@ -17,7 +17,7 @@ from stock_mdl_new_ticker import loadData, predictNew
 def mdl_tomorrow():
     
     # Load Data:
-    bestModel, scaler, fullData, fullDataScaled, today = loadData(final_fname, csvfile)
+    bestModel, scaler, fullData, fullDataScaled, today = loadData(fpath, final_fname, csvfile)
     
     # Model Stats on Current Full Dataset:
     predictNew(bestModel, scaler, fullData, fullDataScaled);
