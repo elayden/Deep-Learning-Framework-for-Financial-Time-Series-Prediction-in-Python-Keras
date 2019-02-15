@@ -131,9 +131,9 @@ def scaleToday(today, scaler, scaleColumns):
 
 def compileModel(inputShape):
     mdl = Sequential(); 
-    mdl.add(Dense(200, input_shape=(inputShape,), activation='relu', kernel_regularizer=regularizers.l2(0.01)))
-    mdl.add(Dense(200, activation='relu'))
-    mdl.add(Dense(1)) # activation='tanh'
+    mdl.add(Dense(180, input_shape=(inputShape,), activation='relu', kernel_regularizer=regularizers.l2(0.02)))
+    mdl.add(Dense(50, activation='relu'))
+    mdl.add(Dense(1, activation='tanh')) 
     mdl.compile(loss='MSE', optimizer='adam') 
     return mdl
 
