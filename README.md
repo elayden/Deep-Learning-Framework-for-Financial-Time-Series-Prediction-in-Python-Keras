@@ -6,7 +6,7 @@
 
 * Calculates a model’s annualized return, improvement over a buy & hold strategy, % of trades that are profitable, profit factor, and max drawdown
 
-train_stock_mdl.py
+## train_stock_mdl.py
 
     This script imports a csv file containing predictors and an outcome 
     variable (last column). It was designed with stock/ETF prediction in mind, 
@@ -25,13 +25,13 @@ train_stock_mdl.py
     use of Test data in addition to Dev data, in order to fairly evaluate 
     the final model.)
     
-stock_mdl_new_ticker.py
+## stock_mdl_new_ticker.py
 
     A script that loads a previously optimized neural network and predicts 
     data from a new stock/ETF ticker. After evaluating performance, there is
     the option to train the model further on the new ticker.
     
-stock_mdl_tomorrow.py
+## stock_mdl_tomorrow.py
 
     Script to load previously trained model, provide stats on full dataset, and 
     predict % gain/loss for tomorrow
