@@ -1,10 +1,10 @@
 # Deep Learning Framework for Financial Time Series Prediction in Python Keras
 
--Randomly partitions time series segments into train, development, and test sets
+* Randomly partitions time series segments into train, development, and test sets
 
--Trains multiple models optimizing parameters for development set, and performs final cross-validation in test sets
+* Trains multiple models optimizing parameters for a development set, and performs a final validation on the test set
 
--Calculates model’s annualized return, improvement from buy/hold, percent profitable trades, profit factor, max drawdown
+* Calculates a model’s annualized return, improvement over a buy & hold strategy, % of trades that are profitable, profit factor, and max drawdown
 
 train_stock_mdl.py
 
